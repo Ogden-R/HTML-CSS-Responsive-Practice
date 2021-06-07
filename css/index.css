@@ -1,0 +1,309 @@
+/*CSS reset*/
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, 
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    }
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+    }
+
+ol, ul {
+    list-style: none;
+    }
+/* tables still need cellspacing="0" in the markup */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    }
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+    }
+/* remove possible quote marks (") from <q> & <blockquote> */
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    }
+blockquote, q {
+    quotes: "" "";
+    }
+/*end of CSS reset*/
+
+*{
+    box-sizing:border-box; /*makes css respect the width of the box, apply padding or border within the width, not in addition to it.*/
+    padding:0;
+    margin:0;
+    max-width:100%; /*makes it so that elements can never be bigger than their parents. stops horizontal scrollbar.*/
+    border:1px solid grey;
+    }
+
+/*General Styles (great to use until you have a preference)*/
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size:1.6rem;/*setting font size back to 16px*/
+    line-height:1.5; /*takes the font size and multiplies it by this number to add space between lines*/
+    color:#4f4f4f;
+    background-color:#FBFFFB;
+}
+a{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    color:#266035;
+}
+h1, h2, h3{
+    font-family: 'Oxygen', sans-serif;
+    color:#266035;
+}
+h1{
+    color:#FBFFFB;
+    font-size:5rem;
+}
+
+h2{
+    font-size:3.5rem;
+}
+
+h3{
+    font-size:2.5rem;
+}
+button{
+    background-color:#266035;
+    padding:3% 4%;
+    font-size:1.8rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    color:#fbfffb;
+}
+
+/*Header styles Section*/
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;/*everything will scroll bhind the nav*/
+    background-color:rgba(255, 255, 255, 0.8);
+}
+.logo{
+    width:10%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.logo img{
+    width:70%;
+}
+
+.links{
+    width:50%;
+    display:flex;
+    justify-content: space-evenly;
+}
+/*top section styles*/
+
+#top{
+    height:90vh;
+    background-image:url('../images/header.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:bottom;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.top button{
+    background-color:#fbfffb;
+    border:2px solid #266035;
+    color:#266035;
+    margin-top:5%;
+    transition:2s;
+}
+#top button:hover{
+    color:#FBFFFB;
+    background-color:#266035;
+}
+
+/*About Section Styles*/
+
+#about{
+    height:80vh;
+    background-image:url('../images/about-img.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+#about .txt{
+    margin:25%;
+    margin-right:10%;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+}
+.shoptext, .bgimg{
+    width:50%;
+}
+.shoptext{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:6% 4%;
+    text-align:center;
+}
+.shoptext div{
+    width:65%;
+}
+
+.shoptext div button{
+    margin-top:5%;
+}
+
+.bgimg{
+    background-size:cover ;
+    background-position:center ;
+    background-repeat: no-repeat;
+}
+
+.succulents{
+    background-image:url('../images/succulants.jpg')
+}
+
+.cacti{
+    background-image:url('../images/cacti.jpg');
+}
+
+.tropicals{
+    background-image:url('../images/tropicals.jpg')
+}
+
+/*Footer*/
+#contact{
+    display: flex;
+    flex-wrap: wrap;
+    color:#fff;
+    background-color:#266035;
+}
+#contact a, #contact h3{
+    color:#fff;
+    text-align:left;
+}
+#contact h2{
+    width:100%;
+    color:#fff;
+}
+
+.left, .right{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.left div, .right img{
+    width:60%;
+}
+.bottom{
+    width:100%;
+}
+
+/*Responsive Styles*/
+/*max-width scales down- desktop first
+min-width scales - mobile first*/
+
+@media(max-width:800px){
+    /*tablet*/
+
+}
+
+@media(max-width:500px) {
+    /*mobile*/
+    nav{
+        flex-direction:column;
+    }
+    .links{
+        width:80%;
+    }
+    #about{
+        background-image:none;
+        background-color:#E0E1E3;
+        justify-content:center;
+        height:auto;
+    }
+    #about .txt{
+        margin:0;
+        width:80%;
+    }
+    /*Shopsection styles*/
+    .container{
+        justify-content:center;
+    }
+    .bgimg{
+        height:60vh;
+    }
+    .shoptext, .bgimg{
+        width:90%;
+
+    }
+    .one{
+        order:0;
+    }
+    .two{
+        order:1
+    }
+    .three{
+        order:2;
+    }
+    .four{
+        order:3;
+    }
+    .five{
+        order:4;
+    }
+    .six{
+        order:5;
+    }
+    #contact{
+        flex-direction:column;
+    }
+    .bottom{
+
+    }
+    .left, .right{
+        width:100%;
+    }
+    #contact h2{
+        order:0;
+    }
+    .left{
+        order:2;
+    }
+    .right{
+        order:1;
+    }
+    .bottom{
+        order:3;
+    }
+
+}
